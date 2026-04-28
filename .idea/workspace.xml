@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="token持久化存储和请求拦截器注入">
-      <change afterPath="$PROJECT_DIR$/src/components/AuthRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Article/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Layout/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/publish/index.js" afterDir="false" />
+    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="首页菜单栏的实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +106,7 @@
       <workItem from="1777292270770" duration="1090000" />
       <workItem from="1777294632682" duration="11000" />
       <workItem from="1777297737844" duration="611000" />
-      <workItem from="1777340379795" duration="7995000" />
+      <workItem from="1777340379795" duration="10248000" />
     </task>
     <task id="LOCAL-00001" summary="项目创建">
       <option name="closed" value="true" />
@@ -174,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777343187128</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="首页菜单栏的实现">
+      <option name="closed" value="true" />
+      <created>1777351898062</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777351898062</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +182,8 @@
     <MESSAGE value="项目创建" />
     <MESSAGE value="登录-表单校验和数据收集" />
     <MESSAGE value="token持久化存储和请求拦截器注入" />
-    <option name="LAST_COMMIT_MESSAGE" value="token持久化存储和请求拦截器注入" />
+    <MESSAGE value="首页菜单栏的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="首页菜单栏的实现" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
