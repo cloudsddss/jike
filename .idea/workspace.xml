@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="项目创建">
-      <change afterPath="$PROJECT_DIR$/src/assets/chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/chart.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/error.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/login.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/logo.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Layout/index.scss" afterDir="false" />
+    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="登录-表单校验和数据收集">
+      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/token.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Layout/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +35,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "author": "cloudsddss"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;cloudsddss&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "cloudsddss"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;cloudsddss&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/cloudsddss/jike.git&quot;,
@@ -67,26 +69,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "E:/黑马2025前端/react/react-jike/src",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/黑马2025前端/react/react-jike/src/pages/Login&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Jetbrains\\WebStorm 2025.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\黑马2025前端\react\react-jike\src\pages\Login" />
       <recent name="E:\黑马2025前端\react\react-jike\src" />
     </key>
   </component>
@@ -106,7 +111,12 @@
       <updated>1777253450830</updated>
       <workItem from="1777253454651" duration="5400000" />
       <workItem from="1777259629724" duration="150000" />
-      <workItem from="1777259795402" duration="4639000" />
+      <workItem from="1777259795402" duration="14707000" />
+      <workItem from="1777289644224" duration="88000" />
+      <workItem from="1777292270770" duration="1090000" />
+      <workItem from="1777294632682" duration="11000" />
+      <workItem from="1777297737844" duration="611000" />
+      <workItem from="1777340379795" duration="2771000" />
     </task>
     <task id="LOCAL-00001" summary="项目创建">
       <option name="closed" value="true" />
@@ -148,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777259969614</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="登录-表单校验和数据收集">
+      <option name="closed" value="true" />
+      <created>1777270426429</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777270426429</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +174,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="项目创建" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目创建" />
+    <MESSAGE value="登录-表单校验和数据收集" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录-表单校验和数据收集" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

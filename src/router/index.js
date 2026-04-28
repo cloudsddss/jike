@@ -6,12 +6,12 @@ import Layout from "@/pages/Layout";
 
 const router = createBrowserRouter([
     {
-        path: '/login',
-        element: <Login/>,
+        path: '/',
+        element: <Layout/>,
     },
     {
-        path:'/',
-        element: <Layout/>,
+        path:'/login',
+        element: <Login/>,
     }
 ]);
 export default router;
