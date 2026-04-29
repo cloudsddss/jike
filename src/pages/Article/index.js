@@ -1,8 +1,10 @@
-function Article() {
+
+const Article = () => {
     return (
         <div>
             Article
         </div>
-    );
+    )
 }
-export default Article;
+
+export default Article
