@@ -3,7 +3,8 @@
 import axios from 'axios'
 import {message} from "antd";
 // 避免与 `src/utils/index.js` 产生循环依赖，直接从 token 模块导入
-import { getToken } from "@/utils/token";
+import {getToken, removeToken} from "@/utils/token";
+import router from "@/router";
 //根域名配置
 //超时
 //请求拦截器
@@ -38,10 +39,11 @@ request.interceptors.response.use((response)=> {
         message.error('网络异常，请稍后重试')
         return Promise.reject(error)
     }
-
-    if (status === 400) {
-        message.error('验证码错误')
-    } else {
+    if (status === 401) {
+        message.error('登录状态无效，请重新登录')
+        removeToken()
+        router.navigate('/login')
+    } else{
         message.error(error.response?.data?.message || `请求失败(${status})`)
     }
     return Promise.reject(error)

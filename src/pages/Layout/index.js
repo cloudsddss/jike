@@ -36,8 +36,13 @@ const GeekLayout = () => {
     const dispatch = useDispatch()
     const {userInfo} = useSelector(state => state.user)
     useEffect(()=>{
-        dispatch(fetchUserInfo())
-    },[dispatch])
+        try {
+            dispatch(fetchUserInfo())
+        } catch (error) {
+            // 错误提示已在响应拦截器统一处理，这里只做兜底避免未捕获异常
+            console.log('fetch user info failed:', error)
+        }
+    },[dispatch, navigate])
     // 退出登录
     const Outlined = () => {
         dispatch(clearUserInfo())
