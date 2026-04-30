@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="文章发布模块">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useChannels.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Article/index.scss" afterDir="false" />
+    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="文章管理模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apis/artical.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/artical.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Article/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Article/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/publish/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publish/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +116,7 @@
       <workItem from="1777447455336" duration="11980000" />
       <workItem from="1777470075118" duration="69000" />
       <workItem from="1777513233104" duration="5168000" />
-      <workItem from="1777524826456" duration="7783000" />
+      <workItem from="1777524826456" duration="11555000" />
     </task>
     <task id="LOCAL-00001" summary="项目创建">
       <option name="closed" value="true" />
@@ -217,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777461672840</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="文章管理模块">
+      <option name="closed" value="true" />
+      <created>1777533371636</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1777533371636</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +237,8 @@
     <MESSAGE value="退出登录" />
     <MESSAGE value="显示图表和封装Api模块" />
     <MESSAGE value="文章发布模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="文章发布模块" />
+    <MESSAGE value="文章管理模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章管理模块" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

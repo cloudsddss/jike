@@ -29,10 +29,17 @@ function deleteArticleApi(id) {
         method:'DELETE'
     })
 }
+// 获取文章详情接口
+function getArticleDetailApi(id) {
+    return request({
+        url:`/mp/articles/${id}`
+    })
+}
 
 export {
     getChannelListApi,
     publishArticleApi,
     getArticleListApi,
-    deleteArticleApi
+    deleteArticleApi,
+    getArticleDetailApi
 }

@@ -10,12 +10,12 @@ import {
     Select, message
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useSearchParams} from 'react-router-dom'
 import './index.scss'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import '@wangeditor/editor/dist/css/style.css'
 import { useEffect, useState } from 'react'
-import { publishArticleApi } from "@/apis/artical";
+import {getArticleDetailApi, publishArticleApi} from "@/apis/artical";
 import { useChannels } from "@/hooks/useChannels";
 const { Option } = Select
 
@@ -80,13 +80,45 @@ const Publish = () => {
             }
         }
     }, [editor])
+
+    //数据回填
+    const [searchParams] = useSearchParams()
+    const  aid  = searchParams.get('id')
+    useEffect(() => {
+        //通过id获取文章详情接口获取数据
+        if( aid) {
+            async function getArticle() {
+                const res = await getArticleDetailApi(aid)
+                const { cover,...formData} = res.data
+                console.log( res)
+                // 回填表单数据
+                form.setFieldsValue(
+                {
+                    ...formData,
+                    type: cover.type,
+                })
+                // 回填“封面类型（无图/单图/三图）”的状态组件，让单选框选中对应的选项
+                setimageType(cover.type)
+                //  回填“封面图片”的状态组件
+                // 将后端的图片 url 数组，映射为 antd Upload 组件认识的对象数组格式
+                setImages(cover.images.map(url=>{
+                    return {url}
+                }))
+                setHtml(res.data.content)//回填编辑器内容
+            }
+            getArticle().then(r =>
+                console.log(r)
+            )
+        }
+
+    },[aid, form])
     return (
         <div className="publish">
             <Card
                 title={
                     <Breadcrumb items={[
                         { title: <Link to={'/'}>首页</Link> },
-                        { title: '发布文章' },
+                        { title: `${aid ?'编辑':'发布'}文章` },
                     ]}
                     />
                 }
@@ -128,6 +160,7 @@ const Publish = () => {
                             // 限制上传数量，根据imageType的值来限制
                             maxCount={imageType}
                             visible={imageType > 0}
+                            fileList={images}
                         >
                             {images.length<imageType&&
                             <div style={{ marginTop: 8 }}>
@@ -155,11 +188,16 @@ const Publish = () => {
                         <div style={{ border: '1px solid #d9d9d9' }} >
                             {editor && (
                                 <Toolbar editor={editor} mode="default" style={{ borderBottom: '1px solid #d9d9d9' }} />
-                            )}                        <Editor    value={html}    onCreated={setEditor}    onChange={(editorInstance) => {
-                            const value = editorInstance.getHtml()
-                            setHtml(value)
-                            form.setFieldValue('content', value)
-                        }}    placeholder="请输入文章内容"    mode="default"    style={{ height: 300, overflowY: 'hidden' }}  />
+                            )}
+                            <Editor    value={html}
+                                       onCreated={setEditor}
+                                       onChange={(editorInstance) => {
+                                           const value = editorInstance.getHtml()
+                                           setHtml(value)
+                                           form.setFieldValue('content', value)}}
+                                       placeholder="请输入文章内容"
+                                       mode="default"
+                                       style={{ height: 300, overflowY: 'hidden' }}  />
                         </div>
                     </Form.Item>
 
