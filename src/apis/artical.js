@@ -35,11 +35,20 @@ function getArticleDetailApi(id) {
         url:`/mp/articles/${id}`
     })
 }
+// 修改文章接口
+function updateArticleApi(id,params) {
+    return request({
+        url:`/mp/articles/${id}`,
+        method:'PUT',
+        data:params
+    })
+}
 
 export {
     getChannelListApi,
     publishArticleApi,
     getArticleListApi,
     deleteArticleApi,
-    getArticleDetailApi
+    getArticleDetailApi,
+    updateArticleApi
 }

@@ -15,7 +15,7 @@ import './index.scss'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import '@wangeditor/editor/dist/css/style.css'
 import { useEffect, useState } from 'react'
-import {getArticleDetailApi, publishArticleApi} from "@/apis/artical";
+import {getArticleDetailApi, publishArticleApi, updateArticleApi} from "@/apis/artical";
 import { useChannels } from "@/hooks/useChannels";
 const { Option } = Select
 
@@ -49,7 +49,14 @@ const Publish = () => {
     }
     //表单提交
     const onFinish =  async (values) => {
-        const imageUrls = images.map(file => file.response.data.url)
+        const imageUrls =  images.map(file =>
+        {
+            if(file.response)
+            {
+                return file.response.data.url
+            }
+            return file.url
+        })
         console.log(imageUrls)
         if(imageType!==images.length)
             return message.error('封面图片数量与选择的模式不符')
@@ -63,11 +70,18 @@ const Publish = () => {
                 images: imageUrls
             }
         }
-        const res = await publishArticleApi(params)
-        console.log( res)
+        if(aid)
+        {
+            const res =await updateArticleApi(aid, params)
+            console.log( res)
+        }
+        else {
+            const res =await publishArticleApi(params)
+            console.log(res)
+        }
         // 发布成功后，重置表单和编辑器内容
         navigate('/article')
-        message.success('发布文章成功')
+        message.success(`${aid?'修改':'发布'}文章成功`)
 
 
     }
@@ -86,29 +100,28 @@ const Publish = () => {
     const  aid  = searchParams.get('id')
     useEffect(() => {
         //通过id获取文章详情接口获取数据
-        if( aid) {
-            async function getArticle() {
-                const res = await getArticleDetailApi(aid)
-                const { cover,...formData} = res.data
-                console.log( res)
-                // 回填表单数据
-                form.setFieldsValue(
-                {
-                    ...formData,
-                    type: cover.type,
-                })
-                // 回填“封面类型（无图/单图/三图）”的状态组件，让单选框选中对应的选项
-                setimageType(cover.type)
-                //  回填“封面图片”的状态组件
-                // 将后端的图片 url 数组，映射为 antd Upload 组件认识的对象数组格式
-                setImages(cover.images.map(url=>{
-                    return {url}
-                }))
-                setHtml(res.data.content)//回填编辑器内容
-            }
+        async function getArticle() {
+            const res = await getArticleDetailApi(aid)
+            const { cover,...formData} = res.data
+            console.log( res)
+            // 回填表单数据
+            form.setFieldsValue(
+            {
+                ...formData,
+                type: cover.type,
+            })
+            // 回填“封面类型（无图/单图/三图）”的状态组件，让单选框选中对应的选项
+            setimageType(cover.type)
+            //  回填“封面图片”的状态组件
+            // 将后端的图片 url 数组，映射为 antd Upload 组件认识的对象数组格式
+            setImages(cover.images.map(url=>{
+                return {url}
+            }))
+            setHtml(res.data.content)//回填编辑器内容
+        }
+        if(aid) {
             getArticle().then(r =>
-                console.log(r)
-            )
+            console.log(r))
         }
 
     },[aid, form])
@@ -204,7 +217,7 @@ const Publish = () => {
                     <Form.Item wrapperCol={{ offset: 4 }}>
                         <Space>
                             <Button size="large" type="primary" htmlType="submit" >
-                                发布文章
+                                {`${aid?'修改':'发布'}文章`}
                             </Button>
                         </Space>
                     </Form.Item>
