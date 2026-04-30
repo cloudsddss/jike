@@ -10,28 +10,31 @@ import {
     Select, message
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import './index.scss'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import '@wangeditor/editor/dist/css/style.css'
 import { useEffect, useState } from 'react'
-import {getChannelListApi, publishArticleApi} from "@/apis/artical";
+import { publishArticleApi } from "@/apis/artical";
+import { useChannels } from "@/hooks/useChannels";
 const { Option } = Select
 
 const Publish = () => {
     const [form] = Form.useForm()
     const [editor, setEditor] = useState(null)
     const [html, setHtml] = useState('')
-    const [channelList, setChannelList] = useState([])
-    useEffect(()=>{
-        async function getChannelList() {
-            const res = await getChannelListApi()
-            setChannelList(res.data.channels)
-        }
-        getChannelList().then(r =>
-            console.log(r)
-        )
-    }, [])
+    const navigate = useNavigate()
+    // const [channelList, setChannelList] = useState([])
+    // useEffect(()=>{
+    //     async function getChannelList() {
+    //         const res = await getChannelListApi()
+    //         setChannelList(res.data.channels)
+    //     }
+    //     getChannelList().then(r =>
+    //         console.log(r)
+    //     )
+    // }, [])
+    const { channelList } = useChannels()
     // 上传图片
     const [images, setImages] = useState([])
     const onUploadChange = ({fileList}) => {
@@ -62,8 +65,21 @@ const Publish = () => {
         }
         const res = await publishArticleApi(params)
         console.log( res)
+        // 发布成功后，重置表单和编辑器内容
+        navigate('/article')
+        message.success('发布文章成功')
+
 
     }
+    // 组件卸载时，销毁编辑器,避免内存泄漏
+    useEffect(() => {
+        return () => {
+            if (editor) {
+                    editor.destroy()
+                    setEditor(null)
+            }
+        }
+    }, [editor])
     return (
         <div className="publish">
             <Card
@@ -136,9 +152,10 @@ const Publish = () => {
                         name="content"
                         rules={[{ required: true, message: '请输入文章内容' }]}
                     >
-                        <div style={{ border: '1px solid #d9d9d9' }}>
-                        <Toolbar editor={editor} mode="default" style={{ borderBottom: '1px solid #d9d9d9' }} />
-                        <Editor    value={html}    onCreated={setEditor}    onChange={(editorInstance) => {
+                        <div style={{ border: '1px solid #d9d9d9' }} >
+                            {editor && (
+                                <Toolbar editor={editor} mode="default" style={{ borderBottom: '1px solid #d9d9d9' }} />
+                            )}                        <Editor    value={html}    onCreated={setEditor}    onChange={(editorInstance) => {
                             const value = editorInstance.getHtml()
                             setHtml(value)
                             form.setFieldValue('content', value)

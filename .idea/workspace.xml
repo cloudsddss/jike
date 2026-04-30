@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="显示图表和封装Api模块">
-      <change afterPath="$PROJECT_DIR$/src/apis/artical.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/publish/index.scss" afterDir="false" />
+    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="文章发布模块">
+      <change afterPath="$PROJECT_DIR$/src/hooks/useChannels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Article/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/artical.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/artical.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Article/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Article/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/publish/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publish/index.js" afterDir="false" />
     </list>
@@ -22,8 +21,8 @@
   </component>
   <component name="CopilotUserSelectedModel">
     <selectedModels>
-      <entry key="agent-panel" value="GPT-5.2-Codex" />
-      <entry key="chat-panel" value="GPT-5.2-Codex" />
+      <entry key="agent-panel" value="Gemini 3.1 Pro" />
+      <entry key="chat-panel" value="Gemini 3.1 Pro" />
     </selectedModels>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -63,27 +62,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "E:/黑马2025前端/react/react-jike/src/pages/publish",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\Jetbrains\\WebStorm 2025.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/黑马2025前端/react/react-jike/src/pages/publish&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Jetbrains\\WebStorm 2025.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\黑马2025前端\react\react-jike\src\pages\publish" />
@@ -117,7 +116,10 @@
       <workItem from="1777366821432" duration="1449000" />
       <workItem from="1777441355644" duration="862000" />
       <workItem from="1777442238546" duration="3354000" />
-      <workItem from="1777447455336" duration="11882000" />
+      <workItem from="1777447455336" duration="11980000" />
+      <workItem from="1777470075118" duration="69000" />
+      <workItem from="1777513233104" duration="5168000" />
+      <workItem from="1777524826456" duration="7783000" />
     </task>
     <task id="LOCAL-00001" summary="项目创建">
       <option name="closed" value="true" />
@@ -207,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777448517875</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="文章发布模块">
+      <option name="closed" value="true" />
+      <created>1777461672840</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1777461672840</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +231,8 @@
     <MESSAGE value="用户信息获取" />
     <MESSAGE value="退出登录" />
     <MESSAGE value="显示图表和封装Api模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="显示图表和封装Api模块" />
+    <MESSAGE value="文章发布模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章发布模块" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

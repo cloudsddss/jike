@@ -15,8 +15,24 @@ function publishArticleApi(params) {
         data:params
     })
 }
+// 获取文章列表接口
+function getArticleListApi(params) {
+    return request({
+        url:'/mp/articles',
+        params
+    })
+}
+// 删除文章接口
+function deleteArticleApi(id) {
+    return request({
+        url:`/mp/articles/${id}`,
+        method:'DELETE'
+    })
+}
 
 export {
     getChannelListApi,
-    publishArticleApi
+    publishArticleApi,
+    getArticleListApi,
+    deleteArticleApi
 }
