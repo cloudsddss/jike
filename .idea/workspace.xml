@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="文章编辑模块">
+    <list default="true" id="33ceeaf0-b48e-4452-a91f-b4895dd065f2" name="更改" comment="文章编辑模块-更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/artical.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/artical.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/publish/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publish/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1777447455336" duration="11980000" />
       <workItem from="1777470075118" duration="69000" />
       <workItem from="1777513233104" duration="5168000" />
-      <workItem from="1777524826456" duration="12800000" />
+      <workItem from="1777524826456" duration="13840000" />
     </task>
     <task id="LOCAL-00001" summary="项目创建">
       <option name="closed" value="true" />
@@ -230,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777537492193</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="文章编辑模块-更新">
+      <option name="closed" value="true" />
+      <created>1777538770455</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1777538770455</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +254,8 @@
     <MESSAGE value="文章发布模块" />
     <MESSAGE value="文章管理模块" />
     <MESSAGE value="文章编辑模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="文章编辑模块" />
+    <MESSAGE value="文章编辑模块-更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章编辑模块-更新" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
